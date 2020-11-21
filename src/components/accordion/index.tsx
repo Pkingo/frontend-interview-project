@@ -5,6 +5,7 @@ import React, {
   SetStateAction,
   useContext,
   useEffect,
+  useRef,
 } from 'react';
 import styles from './accordion.module.scss';
 import Icon from '../icon';
@@ -32,10 +33,19 @@ const Accordion: React.FC<AccordionProps> = ({
   onChange,
 }) => {
   const [isExpanded, setIsExpanded] = useState(expanded);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsExpanded(expanded);
   }, [expanded]);
+  useEffect(() => {
+    if (!isExpanded) {
+      contentRef.current?.style.setProperty('max-height', null);
+    } else {
+      const height = contentRef.current?.scrollHeight;
+      contentRef.current?.style.setProperty('max-height', `${height}px`);
+    }
+  }, [isExpanded]);
 
   const toggle = () => {
     if (disabled) return;
@@ -58,6 +68,7 @@ const Accordion: React.FC<AccordionProps> = ({
         className={styles.accordion}
       >
         <button
+          tabIndex={1}
           aria-expanded={isExpanded}
           className={styles.accordionHeader}
           onClick={toggle}
@@ -67,8 +78,12 @@ const Accordion: React.FC<AccordionProps> = ({
             <Icon name="angle-down" />
           </span>
         </button>
-        <div aria-hidden={!isExpanded} className={styles.accordionContent}>
-          {isExpanded && children}
+        <div
+          ref={contentRef}
+          aria-hidden={!isExpanded}
+          className={styles.accordionContent}
+        >
+          {children}
         </div>
       </div>
     </AccordionContext.Provider>

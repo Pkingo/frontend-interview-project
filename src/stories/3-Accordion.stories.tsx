@@ -122,4 +122,5 @@ export const controlledGroup = () => <ControlledAccordionGroup />;
 export default {
   title: 'Accordion',
   decorators: [withKnobs],
+  argTypes: { onClick: { action: 'clicked' } },
 };

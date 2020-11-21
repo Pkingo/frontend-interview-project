@@ -28,6 +28,7 @@
   border-radius: 5px;
   color: white;
   border: none;
+  margin: 0;
 
   & > h3 {
     margin: 0;
@@ -35,6 +36,8 @@
 
   &:focus {
     outline-color: deeppink;
+    outline-style: solid;
+    outline-width: 2px;
   }
 
   &[aria-expanded='true'] {
@@ -43,18 +46,21 @@
 
     & > span {
       transition: 0.3s transform ease-in-out;
-      transform: rotate(180deg) translateY(2.5px);
+      transform: rotate(180deg);
     }
   }
 
   &[aria-expanded='false'] > span {
     transition: 0.3s transform ease-in-out;
-    transform: rotate(0) translateY(0);
+    transform: rotate(0);
   }
 }
 
 .accordionContent {
   padding: 0 1rem;
+  max-height: 0;
+  transition: max-height 0.3s linear;
+  overflow-y: hidden;
 
   &[aria-hidden='false'] {
     padding-bottom: 0.5rem;
