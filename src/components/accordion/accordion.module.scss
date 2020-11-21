@@ -1,0 +1,62 @@
+:root {
+  --color-purple: #5645d8;
+}
+
+.accordion {
+  border-radius: 6px;
+  background-color: white;
+  border: var(--color-purple) solid 1px;
+
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+    background-color: grey;
+
+    & > span {
+      cursor: default;
+    }
+  }
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  background-color: var(--color-purple);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white;
+  border: none;
+
+  & > h3 {
+    margin: 0;
+  }
+
+  &:focus {
+    outline-color: deeppink;
+  }
+
+  &[aria-expanded='true'] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    & > span {
+      transition: 0.3s transform ease-in-out;
+      transform: rotate(180deg) translateY(2.5px);
+    }
+  }
+
+  &[aria-expanded='false'] > span {
+    transition: 0.3s transform ease-in-out;
+    transform: rotate(0) translateY(0);
+  }
+}
+
+.accordionContent {
+  padding: 0 1rem;
+
+  &[aria-hidden='false'] {
+    padding-bottom: 0.5rem;
+  }
+}

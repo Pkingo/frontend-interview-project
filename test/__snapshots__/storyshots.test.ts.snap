@@ -1,5 +1,195 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Accordion Controlled Group 1`] = `
+Array [
+  <div
+    aria-disabled={false}
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      onClick={[Function]}
+    >
+      <h3>
+        Lorem ipsum 1
+      </h3>
+      <span>
+        <i
+          className="fa fa-angle-down"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+    />
+  </div>,
+  <br />,
+  <div
+    aria-disabled={false}
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      onClick={[Function]}
+    >
+      <h3>
+        Lorem ipsum 2
+      </h3>
+      <span>
+        <i
+          className="fa fa-angle-down"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+    />
+  </div>,
+  <br />,
+  <div
+    aria-disabled={false}
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      onClick={[Function]}
+    >
+      <h3>
+        Lorem ipsum 3
+      </h3>
+      <span>
+        <i
+          className="fa fa-angle-down"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots Accordion Regular 1`] = `
+<div>
+  <div
+    aria-disabled={false}
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      onClick={[Function]}
+    >
+      <h3>
+        Lorem ipsum
+      </h3>
+      <span>
+        <i
+          className="fa fa-angle-down"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Accordion Uncontrolled Group 1`] = `
+Array [
+  <div
+    aria-disabled={false}
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      onClick={[Function]}
+    >
+      <h3>
+        Lorem ipsum 1
+      </h3>
+      <span>
+        <i
+          className="fa fa-angle-down"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+    />
+  </div>,
+  <br />,
+  <div
+    aria-disabled={false}
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      onClick={[Function]}
+    >
+      <h3>
+        Lorem ipsum 2
+      </h3>
+      <span>
+        <i
+          className="fa fa-angle-down"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+    />
+  </div>,
+  <br />,
+  <div
+    aria-disabled={false}
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-expanded={false}
+      onClick={[Function]}
+    >
+      <h3>
+        Lorem ipsum 3
+      </h3>
+      <span>
+        <i
+          className="fa fa-angle-down"
+        />
+      </span>
+    </button>
+    <div
+      aria-hidden={true}
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots Accordion With Close Button 1`] = `
+<div
+  aria-disabled={false}
+  onKeyDown={[Function]}
+>
+  <button
+    aria-expanded={false}
+    onClick={[Function]}
+  >
+    <h3>
+      Lorem ipsum
+    </h3>
+    <span>
+      <i
+        className="fa fa-angle-down"
+      />
+    </span>
+  </button>
+  <div
+    aria-hidden={true}
+  />
+</div>
+`;
+
 exports[`Storyshots Avatar With Gradient Seed 1`] = `
 <div>
   <div

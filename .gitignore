@@ -24,3 +24,6 @@ yarn-error.log*
 
 # storybook static files
 /storybook-static
+
+# typed-scss-modules
+**/*.module.scss.d.ts
