@@ -79,6 +79,7 @@ const Accordion: React.FC<AccordionProps> = ({
           </span>
         </button>
         <div
+          role="region"
           ref={contentRef}
           aria-hidden={!isExpanded}
           className={styles.accordionContent}

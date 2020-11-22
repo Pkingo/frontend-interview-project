@@ -32,13 +32,19 @@ describe('Accordion', () => {
       setup({ disabled: true });
       const accordionHeader = screen.getByRole('button', { name: /title/i });
 
-      expect(screen.queryByText(/children here/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: true }),
+      ).toBeInTheDocument();
       userEvent.click(accordionHeader);
-      expect(screen.queryByText(/children here/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: true }),
+      ).toBeInTheDocument();
     });
     it('should be expanded if the "expanded" prop is passed', () => {
       setup({ expanded: true });
-      expect(screen.queryByText(/children here/i)).toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: false }),
+      ).toBeInTheDocument();
     });
     it('should call "onChange" with is expanded when the accordion is opened/closed', () => {
       const mockOnChange = jest.fn();
@@ -59,20 +65,31 @@ describe('Accordion', () => {
       setup();
       const accordionHeader = screen.getByRole('button', { name: /title/i });
 
-      expect(screen.queryByText(/children here/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: true }),
+      ).toBeInTheDocument();
       userEvent.click(accordionHeader);
-      expect(screen.queryByText(/children here/i)).toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: false }),
+      ).toBeInTheDocument();
     });
   });
   describe('useAccordion', () => {
     it('should be able to close the accordion from inside', () => {
-      setup();
+      const { debug } = setup();
+      debug();
 
-      expect(screen.queryByText(/children here/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: true }),
+      ).toBeInTheDocument();
       userEvent.click(screen.getByRole('button', { name: /title/i }));
-      expect(screen.queryByText(/children here/i)).toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: false }),
+      ).toBeInTheDocument();
       userEvent.click(screen.getByRole('button', { name: /close/i }));
-      expect(screen.queryByText(/children here/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('region', { hidden: true }),
+      ).toBeInTheDocument();
     });
   });
 });
